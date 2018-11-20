@@ -80,8 +80,8 @@ void leArquivo(char **strInput, char **strOutput) {
     size = ftell(input);
     fseek(input, 0, SEEK_SET);  
 
-    *strInput = malloc(size);
-    *strOutput = malloc(size);
+    *strInput = malloc(size + 1);
+    *strOutput = malloc(size + 1);
 
     fread(*strInput, sizeof(char), size, input);
     *(*strInput + size) = '\0';
